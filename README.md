@@ -35,6 +35,8 @@ If not, that’s fine too. At least I archived them before going offline.
 - [`/software/`](./software) → Semantic engines, AGI cores, speculative OS logic
 - [`/hardware/`](./hardware) → Interface designs, autonomy modules
 - [`/paper/`](./paper) → Physics, theology, mathematics, psychology, and sarcasm
+- 📜 See [LICENSE](../LICENSE.md) for usage terms.
+
 
 ---
 
