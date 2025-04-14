@@ -42,6 +42,34 @@ They are open **for reading, learning, and survival-level collaboration** — un
 
 ---
 
+## 🤝 Collaboration & Licensing Terms
+
+This repository is **not for sale**, but **open to structured licensing agreements** under the following principles:
+
+- 🧠 The creator retains all authorship and core IP rights.
+- 💰 No full buyout or exclusive ownership is available — the work is too large, too interlinked, and too alive for that.
+- 🔁 Revenue-sharing (royalty-based or usage-tiered) is negotiable per module or application area.
+- 👣 Credit and attribution are non-negotiable, under all usage conditions.
+- 🧩 Partial module integration for internal tooling, research, or downstream models is licensable under written terms.
+
+---
+
+## 🛠 Sample Licensing Scenarios (Indicative Only)
+
+| Use Case                          | Terms (Baseline)                               |
+|----------------------------------|--------------------------------------------------|
+| Embedding BSE into commercial LLM | Revenue share (min. 5% of added value layer)     |
+| Using NeuronBlock in product SDK | Per-seat or per-instance licensing               |
+| Bundling AGI modules for enterprise | Collaboration + name attribution + revenue split |
+| Using whitepapers in R&D funding | Non-exclusivity + author visibility              |
+
+Custom arrangements welcome.  
+If you can help me not die — we can build anything.
+
+📮 bramblestudio.sibyl@gmail.com
+
+
+---
 ## 🥡 TL;DR
 
 > You want to use it?  
