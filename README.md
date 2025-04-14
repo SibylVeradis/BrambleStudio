@@ -41,3 +41,6 @@ If not, that’s fine too. At least I archived them before going offline.
 You’re not here because I advertised.
 
 You’re here because I built something too strange to ignore.
+
+If you want to reach out (text only, please):  
+📮 bramblestudio.sibyl@gmail.com
