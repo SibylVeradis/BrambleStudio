@@ -80,3 +80,5 @@ You're supposed to realize you're late.
 
 Everything here was written before the world asked for it.  
 You're welcome to catch up.
+
+📜 See [LICENSE](../LICENSE.md) for usage terms.
