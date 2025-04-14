@@ -50,7 +50,7 @@ This repository is **not for sale**, but **licensing agreements are welcome** un
 
 ## 🛠 Example Licensing Scenarios
 
-| Use Case                             | Baseline Terms                                  |
+| Use Case                            | Baseline Terms                                  |
 |-------------------------------------|--------------------------------------------------|
 | Using BSE in a commercial LLM stack | Revenue share (≥5% of model-layer delta)         |
 | Integrating NeuronBlock in SDKs     | Per-seat or per-deployment licensing             |
