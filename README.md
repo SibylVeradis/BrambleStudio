@@ -44,3 +44,7 @@ You’re here because I built something too strange to ignore.
 
 If you want to reach out (text only, please):  
 📮 bramblestudio.sibyl@gmail.com
+
+(And no — I’m not trying to be cool.  
+I’m just emotionally dissociating, probably about to AFK.  
+But hey, figured I’d struggle a little before I flatline.)
