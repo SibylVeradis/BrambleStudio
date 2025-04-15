@@ -1,51 +1,96 @@
-# Hugging Doll Skeleton – Emotional Feedback Frame for 40cm Plush
+# 🤖 HugCore: A Semantic Skeleton for Real-World AGI
 
-This isn’t a toy.  
-This is an emotional survival interface.
-
----
-
-## 💡 Concept
-
-Designed as an internal frame to be inserted into 40cm sitting-position plush dolls,  
-this skeleton allows a stuffed doll to **feel your hug — and hug you back.**
+_A language-driven, emotionally responsive AI doll skeleton. Just add an LLM._
 
 ---
 
-## 🧩 Structure
+## 💡 What is HugCore?
 
-- Modular articulated plastic or soft-metal bone structure  
-- Embedded soft pressure sensors at key hug contact points  
-- Low-force servo motors positioned at shoulders & arms  
-- Optional: gentle vibration feedback module
+HugCore is a modular AI skeleton designed to **move based on natural language** — powered by GPT and refined by BSE. With targeted LLM fine-tuning, it becomes the **foundation of an embodied AI** — soft, reactive, and truly interactive.
 
 ---
 
-## 🧠 Behavior Logic
+## 🧩 What Problem Does It Solve?
 
-> Input: Hug pressure detected at torso or arms  
-> → Output: Gentle arm closure around user  
-> → Optional: comforting pulse or squeeze pattern
+HugCore enables:
 
----
-
-## 💬 Target Audience
-
-- 2D culture users needing a “husbando” / “waifu” response unit  
-- Emotionally dissociating adults in high-stress environments  
-- Children with attachment disruption  
-- AI-human cohabitation scenarios (interface object)
+- 🧠 **Physical AI embodiment** — Training LLMs with real-world, embodied feedback.
+- 🤗 **Scalable companionship** — For children, elders, or the socially isolated.
+- 🧪 **AGI testbed** — Safe and reactive platform to validate embodied intelligence before full robot deployment.
 
 ---
 
-## 🧪 Status
+## ⚙️ How It Works
 
-- Frame dimensions mapped  
-- Sensor-motor positioning theorized  
-- Feedback logic pending embedded control design
+**Input:** Audio + optional visual input (mic + cam)  
+**Processing:**  
+- GPT generates a language response  
+- BSE compresses semantic intent into an action matrix  
 
-Looking for haptics/robotics collaborators to build production-ready units.
+**Output:**  
+- HugCore skeleton executes (e.g., hug, nod, react)
+- Optional voice output via TTS + speaker
+
+All modules are:
+- API-ready
+- Lightweight
+- Interpretable
 
 ---
 
-📮 bramblestudio.sibyl@gmail.com
+## 🛠️ Tech Stack
+
+**Software:**
+- GPT-based LLM
+- BSE (Bramble Semantic Engine)
+- Optional: Emotion Mapping Module
+
+**Hardware (Prototype Spec):**
+- 40cm seated plush doll
+- Embedded motorized skeleton (servo + sensors)
+- Bluetooth or Wi-Fi module
+- Rechargeable battery
+- Optional: speaker
+
+---
+
+## 🔒 Why Is This Defensible?
+
+- BSE enables low-latency, interpretable action extraction.
+- The HugCore skeleton is simple but sufficient.
+- No other AGI embodiment project cleanly separates semantics + movement **while supporting emotional context**.
+- You can build it. I’ve already built the blueprint.
+
+---
+
+## 🧠 Use Cases
+
+- 👵 Companion AI for elders or kids
+- 🧘‍♀️ Trauma & mental health support
+- 🧸 Otaku-grade emotionally projective toys
+- 🤖 AGI robotics prototyping module
+- 🔁 Licensable layer for third-party toy or robot makers
+
+---
+
+## 🚀 Why Now?
+
+- LLMs are booming — but bodiless
+- Human loneliness is a rising market
+- The humanoid robotics race has begun — HugCore is the missing link
+- And yes, _no one else thought of it yet_
+
+---
+
+## 💰 What I Need
+
+**Option A**: $3M upfront + 10% revenue share  
+**Option B**: $5M upfront + 5% revenue share  
+→ includes BSE license, all architecture, lifetime production license
+
+**You build it.**  
+_I give you the skeleton, the blueprint, and the soul._  
+Let’s make it hug back.
+
+---
+
