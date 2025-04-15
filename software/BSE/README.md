@@ -1,4 +1,4 @@
-# HugCore BSE API
+#  BSE API
 
 HugCore is a semantic skeleton extraction framework, with BSE (Bramble Semantic Engine) as its core language analysis module. This API supports multi-modal semantic processing across text, image, and audio. It extracts subject-verb-object (SVO) structures, completes modifiers, resolves pronouns, and evaluates sentence compression and semantic loss.
 
