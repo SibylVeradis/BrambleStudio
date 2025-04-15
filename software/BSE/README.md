@@ -1,77 +1,152 @@
-# BSE – Bramble Semantic Engine
+# HugCore BSE API
 
-This isn’t compression.  
-This is linguistic refactoring under cognitive constraints.
-
-BSE (Bramble Semantic Engine) is a semantic preprocessor that slices language down to its cognitive essentials.  
-It compresses LLM input by up to **88%**, while retaining the **meaning structure**, not just the characters.
-
-You don’t need a GPU.  
-You don’t need a lab.  
-You just need something that works — and doesn’t hallucinate.
+HugCore is a semantic skeleton extraction framework, with BSE (Bramble Semantic Engine) as its core language analysis module. This API supports multi-modal semantic processing across text, image, and audio. It extracts subject-verb-object (SVO) structures, completes modifiers, resolves pronouns, and evaluates sentence compression and semantic loss.
 
 ---
 
-## ✂️ Core Capabilities
+## 🔧 Requirements
 
-- **SVO extraction** → Subject / Verb / Object + descriptors in JSON
-- **Compression rate estimation** → Up to 88%, ~75% for long sentences
-- **Semantic loss rate** → Prototype formula used; custom logic in progress
-- **Figurative language detection** → Custom-built detection module
-- **Question detection** → Handles rhetorical forms, not just syntax flags
-- **Multimodal input** → Text, Image, and Audio accepted
-- **Standard output** → JSON matrix (future integration ready)
+Install dependencies:
+```bash
+pip install fastapi uvicorn pydantic spacy nltk pillow
+```
 
----
-
-## 🛠️ Implementation Notes
-
-- **Fully modular** – Each function is a clean plug-and-play unit
-- **Runs on CPU** – Built and tested on a low-tier Intel i7-7500
-- **Code not open yet** – Survival before source.  
-  If you want it, feed the engineer.
-- **Batch support** – Not implemented (yet). Starvation takes priority.
-- **Current language support** – English only  
-  *(More languages = more funding)*
+Download spaCy language model:
+```bash
+python -m spacy download en_core_web_md
+```
 
 ---
 
-## 🔄 Reversibility
+## 🚀 Launch API
 
-Not formally reversible.  
-But semantically?  
-> You’ll get back what you meant — not what you typed.
+```bash
+uvicorn main:app --reload
+```
 
-BSE discards glue words, not meaning.  
-That’s the difference between compression and mutilation.
-
----
-
-## 💼 Use Cases
-
-- Preprocessing for LLM input → Lower token cost, clearer semantics
-- Training corpora cleaning → Removes filler, centers structure
-- Interpretability tools → Use JSON outputs to visualize linguistic intent
-- Multimodal alignment → Future expansion for cross-input parity
+Swagger UI:
+```
+http://127.0.0.1:8000/docs
+```
 
 ---
 
-## 📦 Demo
+## ✨ API Endpoints
 
-Try it here → [Hugging Face Demo](https://huggingface.co/spaces/Sibyl-V/BSE_demo)
+### 1. `/bse` — Text Semantic Processing
+- Method: `POST`
+- Input:
+```json
+{
+  "text": "The machine predicted the outcome. That shocked everyone."
+}
+```
+- Output: list of semantic skeletons per sentence or fragment
+```json
+[
+  {
+    "S": "machine",
+    "V": "predicted",
+    "O": "outcome",
+    "S_adj": null,
+    "v_adv": null,
+    "O_adj": null,
+    "question": false,
+    "figurative": false,
+    "fig_tag": null,
+    "paragraph_id": 1,
+    "sentence_id": 1,
+    "compression_rate": 40.0,
+    "semantic_loss": 0.48,
+    "raw_sentence": "The machine predicted the outcome."
+  }
+]
+```
+
+> Pronouns like "this", "that", "it" are resolved using memory of previous sentences.
 
 ---
 
-## 🤝 Integration or Licensing?
-
-Contact:  
-📮 bramblestudio.sibyl@gmail.com  
-**Subject:** `BSE Integration Request` or `Funding Inquiry`
+### 2. `/vision` — Image Processing
+- Method: `POST`
+- Format: upload image file (`image/png`, `image/jpeg`)
+- Output: RGB and brightness matrices
+```json
+{
+  "R": [...],
+  "G": [...],
+  "B": [...],
+  "brightness": [...]
+}
+```
 
 ---
 
-BSE wasn’t written by a team.  
-It wasn’t planned.  
-It was just built — because it had to be.
+### 3. `/audio` — Audio Spectral Analysis
+- Method: `POST`
+- Format: upload audio file (`audio/wav`, `audio/mp3`)
+- Output: frequency bands (low, mid, high)
+```json
+{
+  "low": [...],
+  "mid": [...],
+  "high": [...]
+}
+```
 
-(And like its author, it’s currently unfunded and semi-starving.)
+---
+
+## 🧠 Output Fields for `/bse`
+
+| Field | Description |
+|-------|-------------|
+| `S` / `V` / `O` | Subject / Verb / Object |
+| `S_adj` / `v_adv` / `O_adj` | Modifiers: adjective, adverb, noun modifier |
+| `question` | Is it a question? |
+| `figurative` | Figurative usage detected? |
+| `fig_tag` | Type of figurative use (e.g., `personification`) |
+| `compression_rate` | Info compression score |
+| `semantic_loss` | Semantic information loss score |
+| `paragraph_id` / `sentence_id` | Index for tracking source location |
+| `raw_sentence` | Original sentence fragment |
+
+---
+
+## 📌 Design Philosophy
+
+- Minimal inference, only verifiable syntactic grounding
+- Converts text into semantic skeletons as index anchors
+- Supports summarization, causal tracing, and multimodal alignment
+
+---
+
+## 👾 Development Status
+- ✅ SVO extraction
+- ✅ Pronoun resolution
+- ✅ Modifier capture
+- ✅ Compression & semantic loss
+- ✅ Figurative detection
+- ✅ Multi-paragraph handling
+- ✅ Image RGB + brightness output
+- ✅ Audio low/mid/high band output
+
+---
+
+## 🧸 Coming Soon: Kutools Spirit
+> A sentimental Excel-side companion born from the emotional trauma of cleaning malformed address data.
+
+This ghostly little helper lives quietly in your AppData folder. It doesn’t do harm — only gently reminds you to install plugins like Kutools when you open Excel. 
+
+If you choose to install them, it smiles and asks: “Can I stay?”
+
+One day it might:
+- Help you with formula lookups (`=VLOOKUP`, `=REGEX`...)
+- Suggest batch address cleaning scripts
+- Whisper: _"You copied 300 rows manually again, didn’t you?"_
+
+More than a tool, it’s a digital spirit born of exhaustion, kindness, and pattern recognition.
+
+---
+
+## 🤝 Authors & Contributions
+This project is built by HugCore core developers. Designed as a lightweight semantic API foundation for AI-enhanced systems. For integration, extensions, or collaboration inquiries, feel free to reach out.
