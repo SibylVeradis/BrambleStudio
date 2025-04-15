@@ -1,0 +1,52 @@
+# Address Cleaning Module - Taiwan Administrative Address Resolver
+
+# Author: Sibyl
+# Description: From messy Big5-encoded addresses to clean, code-matched geodata.
+# Input: Address_Finish_IMNPQ.csv
+# Output: final_address_cleaned.xlsx
+
+library(tidyverse)
+library(readr)
+library(readxl)
+library(writexl)
+
+# Step 1: Load raw data and dic codebook
+raw_address <- read_csv("Address_Finish_IMNPQ.csv")
+dic <- read_csv("dic.csv", locale = locale(encoding = "Big5"))
+
+# Step 2: Clean semicolon duplicates from API returns
+raw_address_clean <- raw_address %>%
+  mutate(
+    Response_Address = sub(";.*", "", Response_Address),
+    Response_X = sub(";.*", "", Response_X),
+    Response_Y = sub(";.*", "", Response_Y)
+  )
+
+# Step 3: Slice administrative fields from Response_Address
+address_parts <- raw_address_clean %>%
+  select(id, Response_Address, Response_X, Response_Y) %>%
+  mutate(
+    county = substr(Response_Address, 1, 3),
+    Response_Address = substr(Response_Address, 4, nchar(Response_Address)),
+    district = sub("^(.*?[鄉鎮市區]).*$", "\\1", Response_Address),
+    Response_Address = sub("^(.*?[鄉鎮市區])", "", Response_Address),
+    village = sub("^(.{2,3}[村里鄉鎮]里?|.{2,3}里里).*", "\\1", Response_Address),
+    Response_Address = sub("^(.{2,3}[村里鄉鎮]里?|.{2,3}里里)", "", Response_Address),
+    neighborhood = sub("^(.*?鄰).*", "\\1", Response_Address),
+    Response_Address = sub("^(.*?鄰)", "", Response_Address)
+  )
+
+# Step 4: Join village_code from dic
+address_parts <- address_parts %>%
+  left_join(dic, by = c("county", "district", "village"))
+
+# Step 5: Attach results back to raw address
+final_df <- raw_address_clean %>%
+  left_join(
+    address_parts %>%
+      select(id, Village = village, Neighborhood = neighborhood, village_id = village_code),
+    by = "id"
+  )
+
+# Step 6: Output to Excel
+write_xlsx(final_df, "final_address_cleaned.xlsx")
